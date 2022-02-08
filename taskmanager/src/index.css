@@ -1,0 +1,406 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  /* background-color: var(--bgcolor); */
+  
+}
+:root {
+  --bgcolor: #f1f5fd;
+  --primary-color: #6f5de7;
+  --text-color: #828286;
+  --main-text-color: #333333;
+
+}
+#root{
+  background-color:#fdeef4;
+}
+html {
+  font-size: 90%;
+  background-color: #fdeef4;
+}
+
+/*--------------------------input field----------------------- */
+
+.form-control {
+  height: 3rem;
+}
+.user-input-feild {
+  margin-bottom: 4rem;
+}
+.btnsubmit {
+  margin-top: 2rem;
+}
+.btnleave {
+  margin-left: 12rem;
+}
+.btnmodule {
+  margin-left: 10rem;
+}
+.btntask {
+  margin-left: 35rem;
+}
+.form-group {
+  margin-top: 1rem;
+}
+.btnsub {
+  height: 2rem !important;
+}
+.btn-approve{
+  padding: 0;
+  height: 60%;
+  width: 50%;
+  font-size: 12px;
+}
+.btn-delete{
+  width: 80%;
+  font-size: 70%;
+  margin: 0px;
+  padding-left: 0px;
+}
+.btn-module{
+  width: 25%;
+  font-size: 80%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.btn-assign{
+  margin-left: 120px;
+}
+.btn-drop{
+  margin-right: -100px;
+  
+}
+.logout{
+  width: 50%;
+  height: 90%;
+  padding: 1px;
+  margin-top: 3px;
+
+}
+.logout-item{
+  
+  height: 90%;
+  padding: 1px;
+  margin-top: 3px;
+  margin-left: -90px;
+}
+#search{
+  width: 10rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  
+}
+#label{
+  float: right;
+}
+
+/* --------------------------------- navbar style
+                        -------------------------------------------------------*/
+.d-flex .btn-primary {
+  margin: 0.1rem;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.d-flex .btn-primary:hover {
+  background-color: var(--bgcolor);
+  background: black;
+}
+.d-flex .btn-secondary {
+  margin: 0.1rem;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+
+.navbar {
+  background-color: #e6e6fa !important;
+  height: 4rem;
+}
+.navbar-bg {
+  padding: 0rem 0;
+  z-index: 99;
+  position: relative;
+  width: 100%;
+}
+.navbar-bg h3 {
+  text-align: center;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  margin-left: 0px;
+}
+.nav-img {
+  margin-left: -100px;
+}
+.btns {
+  margin-left: 75px!important;
+}
+
+/*---------------Login----------------------------*/
+.card {
+  margin-top: 3rem;
+  margin-left: 20rem;
+  width: 35rem;
+}
+.log-in {
+  background-color: lightgray;
+  height: 100vh;
+}
+.register{
+  background-color: lightgray;
+  height: 10;
+  margin-top: -7rem;
+}
+
+.fa-user {
+  margin: 2rem;
+}
+.fa-sign-out-alt {
+  margin-left: 10px;
+}
+.card {
+  width: 30rem;
+  justify-content: center;
+  margin-left: 30%;
+  margin-right: 25%;
+  margin-top: 13%;
+}
+
+
+.card .title {
+  background-color: lightgreen;
+}
+.login-div input {
+  width: 80%;
+  height: 2.5rem;
+}
+.card-body {
+  background-color: MintCream;
+}
+.login-div .form-group {
+  margin-left: 5rem;
+}
+.btnlogin {
+  margin-left: 10rem;
+}
+/* -------------form-----------------*/
+
+.leaveDetails {
+  background-color: #fdeef4;
+}
+.btn-col {
+  background-color: #fdeef4;
+}
+.form-section {
+  background-color: #fdeef4;
+}
+
+.footer {
+  background-color: #fdeef4;
+
+  bottom: 0;
+  bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    clear:both;
+    position: relative;
+}
+.homepage {
+  background-color: #fdeef4 !important;
+  padding-bottom: 420px;
+ 
+}
+.profile-section{
+  background-color: #fdeef4 ;
+}
+/*-------------------*/
+
+
+/* --------------------------------- leave form
+                        -------------------------------------------------------*/
+.leave-form {
+  background-color: grey;
+}
+.leave-form input {
+  width: 30rem;
+}
+.leave-form select {
+  width: 30rem;
+}
+.form-in {
+  margin-left: 25rem !important;
+}
+.errror {
+  color: red;
+
+  margin-top: 0.6rem;
+}
+/* --------------------------------- responsive media queries  
+                        -------------------------------------------------------*/
+@media (min-width: 1500px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1500px !important;
+  }
+}
+
+/*Error*/
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 920px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.notfound h2 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 46px;
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0px;
+}
+.notfound p {
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+.notfound a {
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #189cf0;
+  display: inline-block;
+  padding: 16px 38px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 400;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.module-footer{
+  margin-top: 12rem;
+}
+.emp-table{
+  margin-right: 10rem;
+ 
+}
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1400px;
+  }
+}
+@media (max-width: 998px) {
+  .card {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin: 0;
+    margin-left: 2rem;
+    font-weight: lighter;
+    width: 70%;
+    padding: 1px 1rem;
+  }
+  .leaveDetails{
+    margin-top: 2rem;
+    margin-left: 0rem;
+    font-weight: lighter;
+    padding: 1px 1rem;
+    
+  }
+  .leaveForm{
+    margin-top: 5rem;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    padding: 0%;
+    align-items: center;
+  }
+  .navbar .navbar-collapse{
+  margin-top: 1rem;
+   background-color: #fff;
+    padding: 0rem 0rem;
+  }
+  .navbar-brand{
+    margin-top: 20px;
+  } 
+  .input-group{
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .navbar-brand{
+    position: absolute;
+    padding: 0;
+    margin-top: 5px;
+    margin-left: 40px;
+    text-align: center;
+    
+  } 
+  .btn-drop{
+    margin-right: -6px;
+    margin-top: -7px;
+  float: right;
+  }
+  .align-items-cenroundedter img{
+    margin-left:150px;
+  }
+  .profile-section img{
+    margin-left:150px;
+  }
+
+  .edit-profile-h5{
+    margin-top: 50px;
+  }
+  .edit-button button{
+      margin-top: 20px!important;
+      float: left!important;
+  }
+  .btn-add{
+    margin-left: 200px;
+  }
+  .leaveDetails{
+    margin-left: -200px;
+  }
+  .btnleave{
+    margin-left: 100px;
+  }
+  .table-bordered{
+    margin-left: 230px;
+  }
+  .btn-leaves-days button{
+    align-items: center!important;
+  }
+  }
+
