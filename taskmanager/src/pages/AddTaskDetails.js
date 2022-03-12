@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskDetails from "../TaskDetails";
 import Navbar from  "../Navbar";
-import Footer from "../Footer"
+//import Footer from "../Footer"
 
 
 const AddTaskDetails = () => {

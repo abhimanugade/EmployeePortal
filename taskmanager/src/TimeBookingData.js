@@ -9,7 +9,6 @@ const TimeBookingData = () => {
     axios.post("http://localhost:5000/time_booking_data").then((res) => {
       if (res?.data?.result) {
         setList(res.data.result);
-       // console.log(res.data.result);
       }
     });
   };

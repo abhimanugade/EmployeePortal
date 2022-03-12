@@ -183,7 +183,7 @@ const EditProfile = () => {
         }
       })
       .catch(() => {
-        alert("somthing wrong");
+        alert("Profile Details Not Edited");
       });
   };
   useEffect(() => {
@@ -207,7 +207,7 @@ const EditProfile = () => {
               />
             </div>
             <div class="filetype mx-1">
-              <label for="formFile" class="form-label">
+              <label htmlFor="formFile" class="form-label">
                 Select Profile Photo
               </label>
               <input
@@ -240,7 +240,7 @@ const EditProfile = () => {
             <h5 className="edit-profile-h5">Personal Information</h5>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="name">First Name</label>
+                <label htmlFor="name">First Name</label>
                 <input
                   type="text"
                   className="form-control"
@@ -259,7 +259,7 @@ const EditProfile = () => {
                 <div className="errror">{errors.fname?.message}</div>
               </div>
               <div className="col-12 col-lg-4">
-                <label for="name">Last Name</label>
+                <label htmlFor="name">Last Name</label>
                 <input
                   type="text"
                   className="form-control"
@@ -278,7 +278,7 @@ const EditProfile = () => {
                 <div className="errror">{errors.last_name?.message}</div>
               </div>
               <div className="col-12 col-lg-4">
-                <label for="address1">Address Line 1</label>
+                <label htmlFor="address1">Address Line 1</label>
                 <input
                   type="text"
                   className="form-control"
@@ -295,7 +295,7 @@ const EditProfile = () => {
             </div>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="address2">Address Line 2</label>
+                <label htmlFor="address2">Address Line 2</label>
                 <input
                   type="text"
                   className="form-control"
@@ -330,7 +330,7 @@ const EditProfile = () => {
                 <div className="errror">{errors.gender?.message}</div>
               </div>
               <div className="col-12 col-lg-4">
-                <label for="contact_no">Contact Number</label>
+                <label htmlFor="contact_no">Contact Number</label>
                 <input
                   type="text"
                   className="form-control"
@@ -355,7 +355,7 @@ const EditProfile = () => {
             </div>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="pin_code">Date of Birth</label>
+                <label htmlFor="pin_code">Date of Birth</label>
                 <input
                   type="date"
                   min="1997-01-01"
@@ -372,7 +372,7 @@ const EditProfile = () => {
                 />
               </div>
               <div className="col-12 col-lg-4">
-                <label for="marital_status">Marital Status</label>
+                <label htmlFor="marital_status">Marital Status</label>
                 <select
                   id="marital_status"
                   className="form-control"
@@ -391,7 +391,7 @@ const EditProfile = () => {
                 <div className="errror">{errors.marital_status?.message}</div>
               </div>
               <div className="col-12 col-lg-4">
-                <label for="email_id">Email ID</label>
+                <label htmlFor="email_id">Email ID</label>
                 <input
                   type="email"
                   className="form-control"
@@ -414,7 +414,7 @@ const EditProfile = () => {
             <h5 className="mt-4">Educational Information</h5>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="qulification">Highest Qualification</label>
+                <label htmlFor="qulification">Highest Qualification</label>
                 <input
                   type="text"
                   className="form-control"
@@ -444,7 +444,7 @@ const EditProfile = () => {
                 <div className="errror">{errors.instituited?.message}</div>
               </div>
               <div className="col-12 col-lg-4">
-                <label for="email_id">Date of Passing</label>
+                <label htmlFor="email_id">Date of Passing</label>
                 <input
                   type="date"
                   className="form-control"
@@ -463,7 +463,7 @@ const EditProfile = () => {
             <h5 className="mt-4">Employment details</h5>
             <div className="row mt-3">
               <div className="col-12 col-lg-6">
-                <label for="email_id"> Date of Joining </label>
+                <label htmlFor="email_id"> Date of Joining </label>
                 <input
                   type="date"
                   className="form-control"

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect } from "react";
 import { Dropdown } from "react-bootstrap";
 
 import { useHistory } from "react-router-dom";
@@ -13,17 +13,21 @@ const Navbar = () => {
     localStorage.removeItem('employee_id');
     localStorage.removeItem('menu');
   }
+  useEffect(() => {
+    localStorage.setItem('menu', 'home');
+  }, [])
+  
 
   
   let history = useHistory();
   return (
     <>
       <section className="navbar-bg">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-          <div class="container">
+        <nav className="navbar navbar-expand-lg navbar-light ">
+          <div className="container">
             <div className="col-6 col-lg-11">
             <img className="nav-img" width="50" height="50" src="./images/compony Logo.png" alt="aboutusimg" />
-              <a class="navbar-brand" href="">
+              <a className="navbar-brand" href="">
                 Rejuvenation Technologies Employee Portal
               </a>
             </div>
@@ -43,7 +47,7 @@ const Navbar = () => {
           </div>
         </nav>
       </section>
-      <form class="d-flex btn-col mx-5 btns">
+      <form className="d-flex btn-col mx-5 btns">
         <button
           className={menu==='home' ? "btn btn-secondary btn-block  btnsub active ": "btn btn-primary btn-block  btnsub deactive"
           }

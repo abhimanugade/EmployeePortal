@@ -30,18 +30,18 @@ const EmployeeDetails = () => {
         
          }
          else{
-          alert("Employee Data delete");
+          alert("Employee Details Deleted Successfully");
           showList();
         
          }
      
     });
-    alert(employee_id)
+   // alert(employee_id)
   };
   return (
     <>
       <div id="wrap">
-        <div class="container emp-table">
+        <div className="container emp-table">
           <h3 className="text-center mt-5">Employee List</h3>
      
           
@@ -49,7 +49,7 @@ const EmployeeDetails = () => {
             cellPadding="0"
             cellspacing="1"
             border="0"
-            class="datatable table table-striped table-bordered "
+            className="datatable table table-striped table-bordered "
           >
             <thead className="text-center">
               <tr>

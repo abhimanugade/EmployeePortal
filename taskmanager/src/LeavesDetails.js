@@ -23,10 +23,11 @@ const LeavesDetails = () => {
   const [remLeaves, setRemLeaves] = useState("");
 
   const showList = () => {
+    
     axios.post("http://localhost:5000/emp_leave_status",{employee_id }).then((res) => {
       if (res?.data?.result) {
         setList(res.data.result);
-        console.log(res.data.result);
+     //   console.log(res.data.result);
       }
     });
   };
@@ -38,7 +39,7 @@ const LeavesDetails = () => {
   useEffect(() => {}, [list]);
 
   useEffect(() => {
-   
+    
     showLeaves();
   }, []);
    useEffect(() => {},[allLeaves,remLeaves]);
@@ -78,7 +79,7 @@ useEffect(() => {
         if (res?.data?.result) {
           setAllLeaves(res.data.result[0].total_leave);
           setRemLeaves(res.data.result[0].remain_leave)
-           console.log(res.data.result);
+           //console.log(res.data.result);
         }
       });
     };
@@ -99,9 +100,9 @@ useEffect(() => {
         employee_id,
       })
       .then((res) => {
-        console.log(res.data);
+       // console.log(res.data);
       
-        alert(" add leave details");
+        alert("Leave Deatails Save Successfully");
       })
       .catch(()=>{
         alert('somthing wrong');
@@ -109,6 +110,7 @@ useEffect(() => {
     }
  
   };
+
 
   return (
     <>
@@ -211,7 +213,7 @@ useEffect(() => {
             cellPadding="0"
             cellspacing="1"
             border="0"
-            class="datatable table table-striped table-bordered"
+            className="datatable table table-striped table-bordered"
           >
             <thead className="text-center">
               <tr>
@@ -229,7 +231,7 @@ useEffect(() => {
               {list?.map((itm, i) => {
                 return (
                     <>
-                  <tr className="text-center">
+                  <tr className="text-center" key={itm.id}>
                     <td>{moment(itm.date).format("DD-MM-YYYY")}</td>
                     <td>{itm.leave_type}</td>
                     <td>{itm.leave_days} </td>

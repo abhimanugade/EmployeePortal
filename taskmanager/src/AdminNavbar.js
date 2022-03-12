@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from "react";
+import React, { useEffect} from "react";
 import { Dropdown } from "react-bootstrap";
 
 import { useHistory } from "react-router-dom";
@@ -15,13 +15,16 @@ function AdminNavbar() {
     localStorage.removeItem('menu');
   
   }
+  useEffect(() => {
+    localStorage.setItem('menu', 'home');
+  }, [])
   return (<>
        <section className="navbar-bg">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-          <div class="container">
+        <nav className="navbar navbar-expand-lg navbar-light ">
+          <div className="container">
             <div className="col-6 col-lg-11">
             <img className="nav-img" width="50" height="50" src="./images/compony Logo.png" alt="aboutusimg" />
-              <a class="navbar-brand" href="">
+              <a className="navbar-brand" href="">
                 Rejuvenation Technologies Employee Portal
               </a>
             </div>
@@ -33,7 +36,7 @@ function AdminNavbar() {
 
               <Dropdown.Menu className="logout-item">
                 
-                <Dropdown.Item href="/AdminLogin" onClick={empty} >log out<i class="fas fa-sign-out-alt"></i></Dropdown.Item>
+                <Dropdown.Item href="/AdminLogin" onClick={empty} >log out<i className="fas fa-sign-out-alt"></i></Dropdown.Item>
               
               </Dropdown.Menu>
             </Dropdown>
@@ -41,7 +44,7 @@ function AdminNavbar() {
           </div>
         </nav>
       </section>
-      <form class="d-flex btn-col btns">
+      <form className="d-flex btn-col btns">
       <button
           type="submit"
           className={menu==='AdminHomePage' ? "btn btn-secondary btn-block btnsub ":"btn btn-primary btn-block btnsub"}

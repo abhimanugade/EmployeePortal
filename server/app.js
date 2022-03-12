@@ -79,7 +79,7 @@ function checkEmpExist(req, res, next) {
       } else {
        console.log(result.length);
         if (result.length > 0) {
-        console.log(result);
+       // console.log(result);
          next();
         } 
         else {
@@ -219,7 +219,7 @@ app.post("/add_module",checkModule, (req, res) => {
 app.post("/show_module", (req, res) => {
   db.query("SELECT * FROM module", (err, result) => {
     //if (err) throw err;
-    console.log(result);
+   // console.log(result);
     res.send({ result });
   });
 });
@@ -243,9 +243,9 @@ app.post("/time_booking", (req, res) => {
   var totalHours = req.body.totalHours;
   var employee_id = req.body.employee_id;
 
-  console.log(tableData);
+ // console.log(tableData);
   var l = tableData.length;
-  console.log(l);
+ // console.log(l);
   for (let i = 0; i < l; i++) {
     db.query(
       "INSERT INTO task_details(employee_id, date, module_id, hours, comment, total_hours) VALUES (?,?,?,?,?,?)",
@@ -420,7 +420,7 @@ app.post("/edit_profile", (req, res) => {
       if (err) {
         res.send({ err: err });
       } else if (result) {
-        console.log(result);
+        //console.log(result);
         res.send({ result });
       } else {
         res.send({ message: "Profile Not Edited" });
@@ -470,7 +470,7 @@ app.post("/leave_status", (req, res) => {
       if (err) {
         res.send({ err: err });
       } else {
-        console.log(result);
+      //  console.log(result);
         res.send({ result });
       }
     }
@@ -482,10 +482,15 @@ app.post("/emp_leave_status", (req, res) => {
     "SELECT * FROM leave_details WHERE status='Pending' AND employee_id=? ORDER BY date DESC " ,[employee_id],
     (err, result) => {
       if (err) {
-        res.send({ err: err });
-      } else {
+       // res.send({ err: err });
+       console.log(err);
+      } 
+      else if(result){
        // console.log(result);
         res.send({ result });
+      }
+      else{
+        console.log('something Wrong')
       }
     }
   );
@@ -494,31 +499,45 @@ app.post("/emp_leave_status", (req, res) => {
 app.post("/approve_leave_status", (req, res) => {
   const employee_id = req.body.employee_id;
   const leave_days=req.body.leave_days;
-  db.query(
-    "UPDATE leave_details SET status='Approved' WHERE employee_id=?",
-    [employee_id],
-    (err, result) => {
-      if (err) {
-        res.send({ err: err });
-      } else {
-       // console.log(result);
-        res.send({ result });
+  
+  try {
+    db.query(
+      "UPDATE leave_details SET status='Approved' WHERE employee_id=? AND leave_days=?" ,
+      [employee_id,leave_days],
+      (err, result) => {
+        if (err) {
+         // res.send({ err: err });
+          console.log(err);
+        } 
+        else if(result){
+          // console.log(result);
+           res.send({ result });
+         }
+         else{
+           console.log('something Wrong')
+         }
       }
-    }
-  );
-  db.query(
-    "UPDATE assign_leave SET remain_leave=remain_leave - ? WHERE employee_id=?",
-    [leave_days,employee_id],
-    (err, result) => {
-      if (err) {
-        res.send({ err: err });
-      } else {
-       // console.log(result);
-        res.send({ result });
+    );
+    
+    
+    db.query(
+      "UPDATE assign_leave SET remain_leave=remain_leave - ? WHERE employee_id=?",
+      [leave_days,employee_id],
+      (err, result) => {
+        if (err) {
+          //res.send({ err: err });
+        } else {
+          console.log(result);
+         // res.send({ result });
+        }
       }
-    }
-  );
-
+    );
+  
+    
+  } catch (error) {
+    console.log(error);
+  }
+ 
 });
 
 app.post("/time_booking_data", (req, res) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useForm, useLocation } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const TaskDetails = () => {
   const {
@@ -110,7 +110,7 @@ const TaskDetails = () => {
       })
       
       .then((res) => {
-        alert("details add");
+        alert("Data Save Successfully");
       })
       .catch(() => {
         alert("Record Not Save");
@@ -143,7 +143,7 @@ const TaskDetails = () => {
               <form method="" action="">
                 <div className="row mt-3">
                   <div className="col-12 col-lg-3">
-                    <label for="hours">Date</label>
+                    <label htmlFor="hours">Date</label>
                     <input
                       type="date"
                       className="form-control"
@@ -160,7 +160,7 @@ const TaskDetails = () => {
                     />
                   </div>
                   <div className="col-12 col-lg-3">
-                    <label for="hours">Total Hours</label>
+                    <label htmlFor="hours">Total Hours</label>
                     <input
                       type="text"
                       className="form-control"

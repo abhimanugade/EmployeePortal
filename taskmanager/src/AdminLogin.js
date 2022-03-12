@@ -1,8 +1,8 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 import {useHistory  } from 'react-router-dom';
 import axios from 'axios';
-import { useForm,useLocation} from 'react-hook-form';
-import { NavLink } from "react-router-dom";
+import { useForm} from 'react-hook-form';
+
 
 
 
@@ -27,7 +27,7 @@ const AdminLogin = () => {
                   alert(res.data.message) 
                 }
                 else{
-                
+                  localStorage.setItem('menu', 'AdminHomePage');
                  localStorage.setItem('user_name',res.data.result[0].user_name);
                //   localStorage.setItem('employee_id', employee_id);
                 history.push('/AdminHomePage')  
@@ -41,12 +41,12 @@ const AdminLogin = () => {
           <div className="row">
             
           <div className="col-12 col-lg-12 mx-auto user-input-feild">
-          <div class="card d-flex justify-content-center card-div">
+          <div className="card d-flex justify-content-center card-div">
             <div className="title">
             <h5 className="text-center m-3">Rejuvenation Technologies Employee Portal</h5>
             </div>
          
-          <div class="card-body login-div">
+          <div className="card-body login-div">
           <h1 className="d-flex justify-content-center">Admin Login</h1>
             
               <form>
@@ -80,7 +80,7 @@ const AdminLogin = () => {
                    <div  className="errror">{errors.password?.message}</div>
                 </div>
                
-                <div class="text-center">
+                <div className="text-center">
                 <button type="submit" className="btn btn-primary btnsubmit btnlogin mt-3" onClick={handleSubmit(onSubmit)}>
                   Login
                 </button>

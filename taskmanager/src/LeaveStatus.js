@@ -14,14 +14,16 @@ const LeaveStatus = () => {
           }
         });
       };
-      const ApproveLeave = (employee_id,leave_days) => {
+      const ApproveLeave = (employee_id,leave_days,leave_type,date) => {
 
-        axios.post("http://localhost:5000/approve_leave_status",{ employee_id,leave_days }).then((res) => {
+        axios.post("http://localhost:5000/approve_leave_status",{ employee_id,leave_days,leave_type,date }).then((res,error) => {
           if (res?.data?.result) {
-            
-            console.log(res.data.result);
-            alert('Leave Approved');
-            showList()
+            console.log(res);
+             alert('Leave Approved');
+             showList()
+          }
+          else{
+            alert('something wrong')
           }
         });
        // alert(employee_id)
@@ -35,13 +37,13 @@ const LeaveStatus = () => {
   return( 
   <>
    <div id="wrap">
-        <div class="container">
+        <div className="container">
           <h3 className="text-center mt-5">Leave Applications</h3>
           <table
             cellPadding="0"
             cellspacing="1"
             border="0"
-            class="datatable table table-striped table-bordered"
+            className="datatable table table-striped table-bordered"
           >
             <thead className="text-center">
               <tr>
@@ -59,7 +61,7 @@ const LeaveStatus = () => {
               {list?.map((itm, i) => {
                 return (
                     <>
-                  <tr className="text-center">
+                  <tr className="text-center" key={itm.employee_id}>
                     <td>{itm.employee_id}</td>
                     <td>{moment(itm.date).format("DD-MM-YYYY")}</td>
                     <td>{itm.leave_type}</td>
@@ -68,7 +70,7 @@ const LeaveStatus = () => {
                     <td className="text-center">
                         <button
                                 className="btn btn-danger btn-approve"
-                               onClick={()=>ApproveLeave(itm.employee_id,itm.leave_days)}
+                               onClick={()=>ApproveLeave(itm.employee_id,itm.leave_days,itm.leave_type,itm.date)}
                               >
                                 Approve
                               </button></td>

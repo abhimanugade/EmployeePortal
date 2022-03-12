@@ -1,6 +1,6 @@
 import React from 'react';
 import AdminNavbar from  "../AdminNavbar";
-import Footer from "../Footer";
+//import Footer from "../Footer";
 import TimeBookingData from "../TimeBookingData";
 
 const TimeBookingList = () => {

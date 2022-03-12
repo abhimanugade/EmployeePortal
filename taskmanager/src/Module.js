@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+
 import { useForm } from "react-hook-form";
 
 const Module = (event) => {
@@ -84,7 +84,7 @@ const Module = (event) => {
       
        }
        else{
-        alert("module delete");
+        alert("Module Deleted Successfully");
         moduleShow();
         setData();
        }

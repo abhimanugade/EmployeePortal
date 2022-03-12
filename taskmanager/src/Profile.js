@@ -30,7 +30,7 @@ const Profile = () => {
     axios.post("http://localhost:5000/profile_data", { employee_id }).then((res) => {
       if (res?.data?.result) {
         setProfileData(res.data.result[0]);
-        console.log(res.data.result);
+     //   console.log(res.data.result);
         //console.log( moment(res.data.result[0].date_of_joining).format('MM-DD-YYYY') );
         let bdate = moment(res.data.result[0].dob).format("YYYY-MM-DD");
         // console.log(bdate);
@@ -52,7 +52,7 @@ const Profile = () => {
         console.log(res.data.result[0].profile_photo);
 
         base64String = btoa(String.fromCharCode(...new Uint8Array(res.data.result[0].profile_photo.data)))
-         console.log(base64String);  
+      //   console.log(base64String);  
         setProfilePhoto(base64String); 
       } 
     });
@@ -62,9 +62,7 @@ const Profile = () => {
     profile();
   }, []);
   useEffect(() => {
-   // console.log(profileData);
-   
-    
+  
   }, [profileData]);
 
  // console.log(dob);
@@ -74,10 +72,10 @@ const Profile = () => {
       <div className="container profile-section mb-5">
         <div className="row">
           <div className="col-lg-3 col-12">
-            <div class="col-md-3 border-right">
-              <div class="d-flex flex-column align-items-cenroundedter text-center">
+            <div className="col-md-3 border-right">
+              <div className="d-flex flex-column align-items-cenroundedter text-center">
                  <img
-                  class="rounded-circle mt-5"
+                  className="rounded-circle mt-5"
                   width="200px"
                   src={`data:image/jpeg;base64,${profilePhoto}`}
                   alt="" 
@@ -91,7 +89,7 @@ const Profile = () => {
           <div className="col-lg-9 col-12">
             <button
               type="button"
-              class="btn btn-danger float-end"
+              className="btn btn-danger float-end"
               onClick={() => {
                 history.push("/edit_profile");
               }}
@@ -102,13 +100,13 @@ const Profile = () => {
             <h5>Personal Information</h5>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="name">First Name</label>
+                <label htmlFor="name">First Name</label>
                 <input
                   type="text"
                   className="form-control"
                   id="name"
                   name="name"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={fName}
                   onChange={(e) => {
@@ -117,13 +115,13 @@ const Profile = () => {
                 />
               </div>
               <div className="col-12 col-lg-4">
-                <label for="name">Last Name</label>
+                <label htmlFor="name">Last Name</label>
                 <input
                   type="text"
                   className="form-control"
                   id="last_name"
                   name="last_name"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={lName}
                   onChange={(e) => {
@@ -132,13 +130,13 @@ const Profile = () => {
                 />
               </div>
               <div className="col-12 col-lg-4">
-                <label for="address1">Address Line 1</label>
+                <label htmlFor="address1">Address Line 1</label>
                 <input
                   type="text"
                   className="form-control"
                   id="address1"
                   name="address1"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={address1}
                   onChange={(e) => {
@@ -149,13 +147,13 @@ const Profile = () => {
             </div>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="address2">Address Line 2</label>
+                <label htmlFor="address2">Address Line 2</label>
                 <input
                   type="text"
                   className="form-control"
                   id="address2"
                   name="address2"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={address2}
                   onChange={(e) => {
@@ -182,13 +180,13 @@ const Profile = () => {
                 </select>
               </div>
               <div className="col-12 col-lg-4">
-                <label for="contact_no">Contact Number</label>
+                <label htmlFor="contact_no">Contact Number</label>
                 <input
                   type="text"
                   className="form-control"
                   id="contact_no"
                   name="contact_no"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={contactNo}
                   onChange={(e) => {
@@ -199,7 +197,7 @@ const Profile = () => {
             </div>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="pin_code">Date of Birth</label>
+                <label htmlFor="pin_code">Date of Birth</label>
                 <input
                   type="date"
                   min="1997-01-01"
@@ -207,7 +205,7 @@ const Profile = () => {
                   className="form-control"
                   id="dob"
                   name="dob"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={dob}
                   onChange={(e) => {
@@ -217,7 +215,7 @@ const Profile = () => {
               </div>
 
               <div className="col-12 col-lg-4">
-                <label for="contact_no">Marital Status</label>
+                <label htmlFor="contact_no">Marital Status</label>
                 <select
                   id="gender"
                   className="form-control"
@@ -235,13 +233,13 @@ const Profile = () => {
                 </select>
               </div>
               <div className="col-12 col-lg-4">
-                <label for="email_id">Email ID</label>
+                <label htmlFor="email_id">Email ID</label>
                 <input
                   type="email"
                   className="form-control"
                   id="email_id"
                   name="email_id"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={emailId}
                   onChange={(e) => {
@@ -254,13 +252,13 @@ const Profile = () => {
             <h5 className="mt-4">Educational Information</h5>
             <div className="row mt-3">
               <div className="col-12 col-lg-4">
-                <label for="qulification">Highest Qualification</label>
+                <label htmlFor="qulification">Highest Qualification</label>
                 <input
                   type="text"
                   className="form-control"
                   id="qulification"
                   name="qulification"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={qulification}
                   onChange={(e) => {
@@ -275,7 +273,7 @@ const Profile = () => {
                   className="form-control"
                   id="instituited"
                   name="instituited"
-                  autocomplete="off"
+                 autoComplete="off"
                   value={university}
                   disabled
                   onChange={(e) => {
@@ -284,13 +282,13 @@ const Profile = () => {
                 />
               </div>
               <div className="col-12 col-lg-4">
-                <label for="email_id">Date of Passing</label>
+                <label htmlFor="email_id">Date of Passing</label>
                 <input
                   type="date"
                   className="form-control"
                   id="dop"
                   name="dop"
-                  autocomplete="off"
+                 autoComplete="off"
                   value={dop}
                   disabled
                   onChange={(e) => {
@@ -303,13 +301,13 @@ const Profile = () => {
             <h5 className="mt-4">Employment details</h5>
             <div className="row mt-3">
               <div className="col-12 col-lg-6">
-                <label for="email_id"> Date of Joining </label>
+                <label htmlFor="email_id"> Date of Joining </label>
                 <input
                   type="date"
                   className="form-control"
                   id="email_id"
                   name="email_id"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={doj}
                   onChange={(e) => {
@@ -324,7 +322,7 @@ const Profile = () => {
                   className="form-control"
                   id="designation"
                   name="designation"
-                  autocomplete="off"
+                 autoComplete="off"
                   disabled
                   value={designation}
                   onChange={(e) => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useForm, useLocation } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -79,14 +79,14 @@ const [submiting, setSubmiting] = useState(false);
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-12 mx-auto user-input-feild">
-              <div class="card d-flex justify-content-center">
+              <div className="card d-flex justify-content-center">
                 <div className="title">
                   <h5 className="text-center m-3">
                     Rejuvenation Technologies Employee Portal
                   </h5>
                 </div>
 
-                <div class="card-body m-1">
+                <div className="card-body m-1">
                   <h1 className="d-flex justify-content-center">Register</h1>
 
                   <form>
@@ -157,7 +157,7 @@ const [submiting, setSubmiting] = useState(false);
                       />
                     </div>
                     <div className="errror ">{errors.cpassword?.message}</div>
-                    <div class="text-center">
+                    <div className="text-center">
                       <button
                         type="submit"
                         className="btn btn-primary btnsubmit btnlogin mt-3"
